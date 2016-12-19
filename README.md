@@ -17,13 +17,13 @@ This template also deploys a jumpbox with a public IP address in the same virtua
 
 ### View of ARM template:
 
-![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/master/AzureARM.PNG "ARM")
+![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/blob/master/AzureARM.PNG "ARM")
 
 NOTES: you can deploy CentOS or SLES
 
 ### Delpoyed in Azure: 
 
-![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/master/Architecture.PNG "architecture")
+![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/blob/master/Architecture.PNG "architecture")
 
 ## Use
 
@@ -46,10 +46,10 @@ NOTES: you can deploy CentOS or SLES
       
          mpirun -ppn 1 -n 2 -hostfile /home/$USER/nodenames.txt -env I_MPI_FABRICS=dapl     -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 IMB-MPI1 pingpong
 
-   5) Run OF:
+   5) Navigate to /mnt/resource/scratch/benchmark 
+      
+   6) Run OpenFOAM with the command below:
    
-      Navigate to /mnt/resource/scratch/benchmark 
-      Run OpenFOAM with the command below
          decomposePar
          . $WM_PROJECT_DIR/bin/tools/RunFunctions 
          ls -d processor* | xargs -I {} rm -rf ./{}/0
