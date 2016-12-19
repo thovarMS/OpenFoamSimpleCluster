@@ -9,7 +9,8 @@ This ARM template is inspired by Taylor NEWILL template:
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-This template allows you to deploy a simple VM Scale Set of Linux VMs using the latest HPC version of CentOS (7.1). 
+This template allows you to deploy a simple VM Scale Set of Linux VMs using the latest HPC version of CentOS (7.1) and OpenFOAM-2.3.x
+
 This template also deploys a jumpbox with a public IP address in the same virtual network. You can connect to the jumpbox via this public IP address, then connect from there to VMs in the scale set via private IP addresses.
 
 ## Architecture
@@ -18,8 +19,6 @@ This template also deploys a jumpbox with a public IP address in the same virtua
 ### View of ARM template:
 
 ![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/blob/master/AzureARM.PNG "ARM")
-
-NOTES: you can deploy CentOS or SLES
 
 ### Delpoyed in Azure: 
 
