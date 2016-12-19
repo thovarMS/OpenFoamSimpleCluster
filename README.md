@@ -31,25 +31,23 @@ NOTES: you can deploy CentOS or SLES
  2) go to resources.azure.com to find the private IP address of the VM,
  3) ssh'ed into the jumpbox, then execute the following command:
 
-    <pre class="prettyprint copy-to-clipboard " >ssh {username}@{vm-private-ip-address}</pre>
+    ssh {username}@{vm-private-ip-address}
 
   4) Then log on of the Compute node using the same account and load the MPI environement variables with:
-    <pre class="prettyprint copy-to-clipboard " >source /opt/intel/impi/5.1.3.181/bin64/mpivars.sh</pre>
+    source /opt/intel/impi/5.1.3.181/bin64/mpivars.sh
 
    5) You are now ready to launch your first test:
 
-      <i>Run a simple MPI command</i>
-      <pre class="prettyprint copy-to-clipboard " >mpirun -ppn 1 -n 2 -hostfile /home/$USER/nodenames.txt -env I_MPI_FABRICS=shm:dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 hostname</pre>
+      Run a simple MPI command
+      
+         mpirun -ppn 1 -n 2 -hostfile /home/$USER/nodenames.txt -env I_MPI_FABRICS=shm:dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 hostname
 
-      <i>Run an MPI benchmark</i>
-      <pre class="prettyprint copy-to-clipboard " >mpirun -ppn 1 -n 2 -hostfile /home/$USER/nodenames.txt -env I_MPI_FABRICS=dapl     -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 IMB-MPI1 pingpong</pre>
+      Run an MPI benchmark
+      mpirun -ppn 1 -n 2 -hostfile /home/$USER/nodenames.txt -env I_MPI_FABRICS=dapl     -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 IMB-MPI1 pingpong
 
    5) Run OF:
       Navigate to /mnt/resource/scratch/benchmark 
       Run OpenFOAM with the command below
-         
-         <b>Code to run OpenFOAM</b>
-         <code>
          decomposePar
          . $WM_PROJECT_DIR/bin/tools/RunFunctions 
          ls -d processor* | xargs -I {} rm -rf ./{}/0
@@ -58,7 +56,6 @@ NOTES: you can deploy CentOS or SLES
          runApplication reconstructParMesh -constant
          runApplication reconstructPar -latestTime
          foamToVTK -ascii -latestTime
-         </code>
 
 ## NOTES
 
