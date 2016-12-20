@@ -146,7 +146,7 @@ fi
 sed -i 's/^Defaults[ ]*requiretty/# Defaults requiretty/g' /etc/sudoers
 
 chmod +x install-of.sh
-source install-of.sh $USER $DOWN
+source install-of.sh $USER $DOWN $PASS
 
 echo "##############################################"
 echo "########## end: hn-setup.sh ############"
