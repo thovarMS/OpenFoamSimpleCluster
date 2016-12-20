@@ -1,14 +1,14 @@
 #!/bin/bash
 USER=$1
-HOST=`hostname`
 DOWN=$2
 PASS=$3
+HOST=`hostname`
 
 echo "##############################################"
 echo "##########  start: install-of.sh  ############"
 echo "##############################################"
-
 echo $USER,$HOST,$DOWN
+
 mkdir /mnt/resource/scratch/
 mkdir /mnt/resource/scratch/applications
 mkdir /mnt/resource/scratch/applications/OpenFOAM
@@ -32,9 +32,9 @@ echo export I_MPI_DAPL_PROVIDER=ofa-v2-ib0 >> /home/$USER/.bashrc
 echo export I_MPI_DYNAMIC_CONNECTION=0 >> /home/$USER/.bashrc
 echo export I_MPI_ROOT=/opt/intel/compilers_and_libraries_2016.2.181/linux/mpi >> /home/$USER/.bashrc
 echo export MPI_ROOT=$I_MPI_ROOT >> /home/$USER/.bashrc
-echo export LD_LIBRARY_PATH=/mnt/resource/scratch/applications/OpenFOAM/intel64_lin:$LD_LIBRARY_PATH >> /home/$USER/.bashrc
 echo export FOAM_INST_DIR=/mnt/resource/scratch/applications/OpenFOAM >> /home/$USER/.bashrc
 echo source /mnt/resource/scratch/applications/OpenFOAM/OpenFOAM-2.3.x/etc/bashrc >> /home/$USER/.bashrc
+echo export LD_LIBRARY_PATH=/mnt/resource/scratch/applications/OpenFOAM/intel64_lin:$LD_LIBRARY_PATH >> /home/$USER/.bashrc
 
 NAMES=`cat /home/$USER/bin/nodenames.txt` #names from names.txt file
 for NAME in $NAMES; do
