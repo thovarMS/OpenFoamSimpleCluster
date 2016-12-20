@@ -55,14 +55,7 @@ This template also deploys a jumpbox with a public IP address in the same virtua
       
    6) Run OpenFOAM with the command below:
    
-         decomposePar
-         . $WM_PROJECT_DIR/bin/tools/RunFunctions 
-         ls -d processor* | xargs -I {} rm -rf ./{}/0
-         ls -d processor* | xargs -I {} cp -r 0.org ./{}/0
-         mpirun -np 48 -ppn 16 -f /home/$USER/nodenames.txt simpleFoam -parallel
-         runApplication reconstructParMesh -constant
-         runApplication reconstructPar -latestTime
-         foamToVTK -ascii -latestTime
+         decomposePar . $WM_PROJECT_DIR/bin/tools/RunFunctions ls -d processor* | xargs -I {} rm -rf ./{}/0 ls -d processor* | xargs -I {} cp -r 0.org ./{}/0 mpirun -np 48 -ppn 16 -f /home/azureuser/nodenames.txt simpleFoam -parallel runApplication reconstructParMesh -constant runApplication reconstructPar -latestTime foamToVTK -ascii -latestTime
 
 ## NOTES
 
