@@ -2,6 +2,7 @@
 USER=$1
 HOST=`hostname`
 DOWN=$2
+PASS=$3
 
 echo "##############################################"
 echo "##########  start: install-of.sh  ############"
@@ -34,6 +35,11 @@ echo export MPI_ROOT=$I_MPI_ROOT >> /home/$USER/.bashrc
 echo export LD_LIBRARY_PATH=/mnt/resource/scratch/applications/OpenFOAM/intel64_lin:$LD_LIBRARY_PATH >> /home/$USER/.bashrc
 echo export FOAM_INST_DIR=/mnt/resource/scratch/applications/OpenFOAM >> /home/$USER/.bashrc
 echo source /mnt/resource/scratch/applications/OpenFOAM/OpenFOAM-2.3.x/etc/bashrc >> /home/$USER/.bashrc
+
+NAMES=`cat /home/$USER/bin/nodenames.txt` #names from names.txt file
+for NAME in $NAMES; do
+        sshpass -p $PASS scp -o "StrictHostKeyChecking no" -o ConnectTimeout=2 /home/$USER/.bashrc $USER@$NAME:/home/$USER/
+done
 
 rm /mnt/resource/scratch/*.tgz
 chown -R $USER:$USER /mnt/resource/scratch/*
