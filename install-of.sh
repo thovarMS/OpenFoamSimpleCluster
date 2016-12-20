@@ -16,12 +16,12 @@ mkdir /mnt/resource/scratch/benchmark
 
 wget -q http://tn0hpc0storage0east.blob.core.windows.net/builds/OpenFOAM_CentOS7_HPC.tgz -O /mnt/resource/scratch/OpenFOAM_CentOS7_HPC.tgz
 wget -q http://tn0hpc0storage0east.blob.core.windows.net/builds/OpenFOAM_CentOS7_HPC_libs.tgz -O /mnt/resource/scratch/OpenFOAM_CentOS7_HPC_libs.tgz
-wget -q http://tn0hpc0storage0east.blob.core.windows.net/builds/$DOWN -O /mnt/resource/scratch/benchmark/$DOWN
-
-tar -xzf /mnt/resource/scratch/benchmark/$DOWN -C /mnt/resource/scratch/benchmark/
 tar -xzf /mnt/resource/scratch/OpenFOAM_CentOS7_HPC.tgz -C /mnt/resource/scratch/applications/OpenFOAM/
 tar -xzf /mnt/resource/scratch/OpenFOAM_CentOS7_HPC_libs.tgz -C /mnt/resource/scratch/applications/OpenFOAM/
-
+if [ ! -z "$DOWN" ]; then
+   	wget -q http://tn0hpc0storage0east.blob.core.windows.net/builds/$DOWN -O /mnt/resource/scratch/benchmark/$DOWN
+	tar -xzf /mnt/resource/scratch/benchmark/$DOWN -C /mnt/resource/scratch/benchmark/
+fi
 		
 echo source /opt/intel/impi/5.1.3.181/bin64/mpivars.sh >> /home/$USER/.bashrc
 echo export HOSTS=/home/$USER/bin/nodenames.txt
