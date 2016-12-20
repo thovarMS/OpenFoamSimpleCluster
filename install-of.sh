@@ -46,5 +46,5 @@ chown -R $USER:$USER /mnt/resource/scratch/*
 chown -R $USER:$USER /mnt/resource/nfsshare
 
 echo "##############################################"
-echo "##########  end: install-of.sh  ############"
+echo "###########  end: install-of.sh  #############"
 echo "##############################################"
