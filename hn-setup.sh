@@ -5,6 +5,10 @@ SKUNAME=$3
 LXDISTRO=$4
 DOWN=$5
 
+echo "##############################################"
+echo "########## start: hn-setup.sh ############"
+echo "##############################################"
+    
 IP=`hostname -i`
 localip=`hostname -i | cut --delimiter='.' -f -3`
 
@@ -143,3 +147,7 @@ sed -i 's/^Defaults[ ]*requiretty/# Defaults requiretty/g' /etc/sudoers
 
 chmod +x install-of.sh
 source install-of.sh $USER $DOWN
+
+echo "##############################################"
+echo "########## end: hn-setup.sh ############"
+echo "##############################################"
