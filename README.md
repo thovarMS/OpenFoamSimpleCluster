@@ -11,6 +11,9 @@ This ARM template is inspired by Taylor NEWILL template:
 
 This template allows you to deploy a simple VM Scale Set of Linux VMs using the latest HPC version of CentOS 7.1 and OpenFOAM-2.3.x
 
+![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/blob/master/centos-logo_s.png "CentOS")
+![Alt text](https://github.com/thovarMS/OpenFoamSimpleCluster/blob/master/openfoam-logo.gif "OF")
+
 This template also deploys a jumpbox with a public IP address in the same virtual network. You can connect to the jumpbox via this public IP address, then connect from there to VMs in the scale set via private IP addresses.
 
 ## Architecture
