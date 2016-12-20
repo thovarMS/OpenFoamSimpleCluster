@@ -1,6 +1,6 @@
 This ARM template is inspired by Taylor NEWILL template:
 
-   - RawCluster tempate: https://github.com/tanewill/5clickTemplates/tree/master/RawCluster  
+   - RawCluster OpenFoam tempate: https://github.com/tanewill/5clickTemplates/tree/master/RawOpenFOAMCluster  
 
 
 # Simple deployment of a VM Scale Set of Linux VMs with a jumpbox with OpenFoam install
