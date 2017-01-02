@@ -51,7 +51,7 @@ This template also deploys a jumpbox with a public IP address in the same virtua
 
    5) Navigate to get the case:
    
-      /mnt/scratch/benchmark 
+      /mnt/ressource/scratch/benchmark 
       
    6) Run OpenFOAM with the command below:
    
